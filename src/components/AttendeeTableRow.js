@@ -5,7 +5,7 @@ class AttendeeTableRow extends React.Component {
     const attendee = this.props.attendee;
     return (
       <tr>
-        <td>{attendee.id}</td>
+        <td>{this.props.number}</td>
         <td>{attendee.firstName}</td>
         <td>{attendee.lastName}</td>
         <td>{attendee.organisation}</td>
