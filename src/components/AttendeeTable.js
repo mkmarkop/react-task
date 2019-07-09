@@ -8,10 +8,15 @@ class AttendeeTable extends React.Component {
     let tableRows = [];
 
     if (attendees.length > 0) {
-      tableRows = attendees.map((attendee, index) =>
-      (<AttendeeTableRow number={index + 1} key={attendee.id} attendee={attendee} />));
+      tableRows = attendees.map((attendee, index) => (
+        <AttendeeTableRow
+          number={index + 1}
+          key={attendee.id} 
+          attendee={attendee}
+          onClick={this.props.onSelect} />
+      ));
     } else {
-      tableRows = <tr><td></td><td colspan="100%">No matching query found</td></tr>;
+      tableRows = <tr><td></td><td colSpan="100%">No matching query found</td></tr>;
     }
 
     return (

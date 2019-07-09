@@ -7,7 +7,7 @@ class AttendeeDisplay extends React.Component {
     super(props);
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.state = {
-      searchText: ''
+      searchText: '',
     }
   }
 
@@ -26,8 +26,8 @@ class AttendeeDisplay extends React.Component {
     const attendees = this.props.attendees;
     return (
       <div>
-        <SearchBar onSearchInput={this.handleSearchChange}/>
-        <AttendeeTable attendees={this.filterAttendees(attendees)} />
+        <SearchBar onSearchInput={this.handleSearchChange} />
+        <AttendeeTable attendees={this.filterAttendees(attendees)} onSelect={this.props.onSelect}/>
       </div>
     );
   }
