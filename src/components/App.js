@@ -3,6 +3,7 @@ import './App.css';
 import AttendeeAPI from '../api/AttendeeAPI';
 import AttendeeDisplay from './AttendeeDisplay';
 import AttendeeDetails from './AttendeeDetails';
+import UrlAPI from '../api/UrlAPI';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,6 +20,8 @@ class App extends React.Component {
       .then((attendee) => {
         this.setState({selectedAttendee: attendee})
       });
+
+    UrlAPI.setParam('selected', id);
   }
 
   componentDidMount() {
@@ -26,6 +29,11 @@ class App extends React.Component {
       .then((attendees) => {
         this.setState({attendees: attendees})
       });
+
+    const id = +UrlAPI.getParam('selected');
+    if (id) {
+      this.handleSelect(id);
+    }
   }
 
   render() {
