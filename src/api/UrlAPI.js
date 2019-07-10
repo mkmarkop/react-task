@@ -1,6 +1,9 @@
 const UrlAPI = {
   setParam(key, value) {
-    window.history.replaceState(null, null, `?${key}=${value}`);
+    const url = new URL(window.location);
+    const params = url.searchParams;
+    params.set(key, value);
+    window.history.replaceState(null, null, url.toString());
   },
 
   getParam(key) {

@@ -38,7 +38,7 @@ class App extends React.Component {
 
   render() {
     const attendees = this.state.attendees;
-    const selected = this.state.selectedAttendee
+    const selected = this.state.selectedAttendee;
     
     return (
       <div className="content">
