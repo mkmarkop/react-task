@@ -1,6 +1,7 @@
 import React from 'react';
 import AttendeeTableHeader from './AttendeeTableHeader';
 import AttendeeTableRow from './AttendeeTableRow';
+import './AttendeeTable.css';
 
 class AttendeeTable extends React.Component {
   render() {
@@ -20,7 +21,7 @@ class AttendeeTable extends React.Component {
     }
 
     return (
-      <table>
+      <table className="attendee-table">
         <thead>
           <AttendeeTableHeader/>
         </thead>

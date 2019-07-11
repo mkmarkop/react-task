@@ -1,4 +1,5 @@
 import React from 'react';
+import './AttendeeTableRow.css';
 
 class AttendeeTableRow extends React.Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class AttendeeTableRow extends React.Component {
   render() {
     const attendee = this.props.attendee;
     return (
-      <tr onClick={this.handleClick}>
+      <tr
+        className={"attendee-table-row " + (this.props.selected === "true" ? "selected" : "")}
+        onClick={this.handleClick}>
         <td>{this.props.number}</td>
         <td>{attendee.firstName}</td>
         <td>{attendee.lastName}</td>

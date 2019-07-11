@@ -9,10 +9,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleCloseDetails = this.handleCloseDetails.bind(this);
     this.state = {
       attendees: [],
       selectedAttendee: undefined
     };
+  }
+
+  handleCloseDetails() {
+    this.setState({selectedAttendee: undefined});
+    UrlAPI.setParam('selected', '');
   }
 
   handleSelect(id) {
@@ -41,9 +47,14 @@ class App extends React.Component {
     const selected = this.state.selectedAttendee;
     
     return (
-      <div className="content">
-        <AttendeeDisplay attendees={attendees} onSelect={this.handleSelect} />
-        <AttendeeDetails attendee={selected} />
+      <div>
+        <header className="app-header">
+          <h1><a href="/">ZAGREB MEETUP</a></h1>
+        </header>
+        <main className="app-main">
+          <AttendeeDisplay attendees={attendees} onSelect={this.handleSelect} />
+          <AttendeeDetails attendee={selected} onClose={this.handleCloseDetails}/>
+        </main>
       </div>
     );
   }

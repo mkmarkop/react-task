@@ -1,0 +1,9 @@
+.attendee-table {
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.attendee-table th, td {
+  padding: 5px;
+}

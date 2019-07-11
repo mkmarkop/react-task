@@ -1,0 +1,42 @@
+.attendee-details {
+  display: none;
+  padding: 10px;
+  background-color: white;
+  position: fixed;
+  right: 0;
+}
+
+.shown {
+  min-width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  box-shadow: -1px 0px 10px #aaaaaa;
+}
+
+.attendee-details-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.close-button:hover {
+  color: #aaaaaa;
+  cursor: pointer;
+}
+
+.attendee-data-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.attendee-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.attendee-data-key {
+  font-weight: 600;
+}

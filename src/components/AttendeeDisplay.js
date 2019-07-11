@@ -2,6 +2,7 @@ import React from 'react';
 import AttendeeTable from './AttendeeTable';
 import SearchBar from './SearchBar';
 import UrlAPI from '../api/UrlAPI';
+import './AttendeeDisplay.css';
 
 class AttendeeDisplay extends React.Component {
   constructor(props) {
@@ -43,8 +44,8 @@ class AttendeeDisplay extends React.Component {
     const value = this.state.value;
 
     return (
-      <div>
-        <SearchBar onSearchInput={this.handleSearchChange} value={value}/>
+      <div className="attendee-display">
+        <SearchBar className="search-bar" onSearchInput={this.handleSearchChange} value={value}/>
         <AttendeeTable attendees={this.filterAttendees(attendees)} onSelect={this.props.onSelect}/>
       </div>
     );
