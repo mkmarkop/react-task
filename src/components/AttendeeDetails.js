@@ -12,7 +12,7 @@ class AttendeeDetails extends React.Component {
   }
 
   render() {
-    const attendee = this.props.attendee || this.emptyAttendee();
+    const {attendee = this.emptyAttendee()} = this.props;
     
     return (
       <div className={"attendee-details " + (this.props.attendee ? "shown" : "")}>

@@ -8,12 +8,12 @@ class AttendeeTableRow extends React.Component {
   }
 
   handleClick() {
-    const attendee = this.props.attendee;
+    const {attendee} = this.props;
     this.props.onClick(attendee.id);
   }
 
   render() {
-    const attendee = this.props.attendee;
+    const {attendee} = this.props;
     return (
       <tr
         className={"attendee-table-row " + (this.props.selected === true ? "selected" : "")}

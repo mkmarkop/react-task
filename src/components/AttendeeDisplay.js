@@ -43,12 +43,12 @@ class AttendeeDisplay extends React.Component {
   }
 
   filterAttendees(attendees) {
-    const searchText = this.state.searchText;
+    const {searchText} = this.state;
     return attendees.filter((attendee) => attendee.organisation.toLowerCase().includes(searchText));
   }
 
   render() {
-    const attendees = this.props.attendees;
+    const {attendees} = this.props;
 
     return (
       <div className="attendee-display">

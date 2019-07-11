@@ -12,7 +12,11 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <input type="search" placeholder="Search..." defaultValue={this.props.value} onInput={this.handleInput} />
+      <input
+        type="search"
+        placeholder="Search by Organisation"
+        defaultValue={this.props.value}
+        onInput={this.handleInput}/>
     );
   }
 }

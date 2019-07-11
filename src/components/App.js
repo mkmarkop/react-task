@@ -43,8 +43,7 @@ class App extends React.Component {
   }
 
   render() {
-    const attendees = this.state.attendees;
-    const selected = this.state.selectedAttendee;
+    const {attendees, selectedAttendee} = this.state;
     
     return (
       <div>
@@ -54,11 +53,11 @@ class App extends React.Component {
         <main className="app-main">
           <AttendeeDisplay
             attendees={attendees}
-            selected={selected ?  selected.id : -1}
+            selected={selectedAttendee ?  selectedAttendee.id : -1}
             onSelect={this.handleSelect}
             onSearchInput={this.handleCloseDetails}/>
           <AttendeeDetails
-            attendee={selected}
+            attendee={selectedAttendee}
             onClose={this.handleCloseDetails}/>
         </main>
       </div>
