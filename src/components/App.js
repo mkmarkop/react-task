@@ -18,7 +18,7 @@ class App extends React.Component {
 
   handleCloseDetails() {
     this.setState({selectedAttendee: undefined});
-    UrlAPI.setParam('selected', '');
+    UrlAPI.clearParam('selected');
   }
 
   handleSelect(id) {
@@ -52,7 +52,7 @@ class App extends React.Component {
           <h1><a href="/">ZAGREB MEETUP</a></h1>
         </header>
         <main className="app-main">
-          <AttendeeDisplay attendees={attendees} onSelect={this.handleSelect} />
+          <AttendeeDisplay attendees={attendees} onSelect={this.handleSelect} onSearchInput={this.handleCloseDetails}/>
           <AttendeeDetails attendee={selected} onClose={this.handleCloseDetails}/>
         </main>
       </div>

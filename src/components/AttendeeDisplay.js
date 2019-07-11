@@ -15,8 +15,9 @@ class AttendeeDisplay extends React.Component {
   }
 
   componentDidMount() {
-    const filter = UrlAPI.getParam('filter').trim();
+    let filter = UrlAPI.getParam('filter');
     if (filter) {
+      filter = filter.trim();
       this.setState({
         searchText: filter,
         value: filter
@@ -31,7 +32,13 @@ class AttendeeDisplay extends React.Component {
       searchText: filter
     });
 
-    UrlAPI.setParam('filter', filter);
+    if (filter) {
+      UrlAPI.setParam('filter', filter);
+    } else {
+      UrlAPI.clearParam('filter');
+    }
+    
+    this.props.onSearchInput(searchText);
   }
 
   filterAttendees(attendees) {
