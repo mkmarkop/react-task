@@ -22,6 +22,7 @@ class AttendeeTableRow extends React.Component {
         <td>{attendee.firstName}</td>
         <td>{attendee.lastName}</td>
         <td>{attendee.organisation}</td>
+        <td>{attendee.gender}</td>
       </tr>
     );
   }

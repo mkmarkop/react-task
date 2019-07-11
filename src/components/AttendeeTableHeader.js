@@ -9,6 +9,7 @@ class AttendeeTableHeader extends React.Component {
         <th>First Name</th>
         <th>Last Name</th>
         <th>Organisation</th>
+        <th>Gender</th>
       </tr>
     )
   }

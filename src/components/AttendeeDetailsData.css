@@ -1,0 +1,9 @@
+.attendee-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.attendee-data-key {
+  font-weight: 600;
+}

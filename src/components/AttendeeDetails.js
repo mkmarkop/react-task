@@ -1,5 +1,6 @@
 import React from 'react';
 import './AttendeeDetails.css';
+import AttendeeDetailsData from './AttendeeDetailsData';
 
 class AttendeeDetails extends React.Component {
   emptyAttendee() {
@@ -22,20 +23,11 @@ class AttendeeDetails extends React.Component {
             onClick={this.props.onClose}>x</strong>
         </header>
         <div className="attendee-data-table">
-          <div className="attendee-data">
-            <p className="attendee-data-key">First Name</p>
-            <p className="attendee-data-value">{attendee.firstName}</p>
-          </div>
-
-          <div className="attendee-data">
-            <p className="attendee-data-key">Last Name</p>
-            <p className="attendee-data-value">{attendee.lastName}</p>
-          </div>
-
-          <div className="attendee-data">
-          <p className="attendee-data-key">Organisation</p>
-          <p className="attendee-data-value">{attendee.organisation}</p>
-          </div>
+          <AttendeeDetailsData dataKey="First Name" dataValue={attendee.firstName} />
+          <AttendeeDetailsData dataKey="Last Name" dataValue={attendee.lastName} />
+          <AttendeeDetailsData dataKey="Organisation" dataValue={attendee.organisation} />
+          <AttendeeDetailsData dataKey="Gender" dataValue={attendee.gender} />
+          <AttendeeDetailsData dataKey="Phone" dataValue={attendee.phone} />
         </div>
       </div>
     );
