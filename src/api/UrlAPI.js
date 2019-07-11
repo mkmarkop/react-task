@@ -1,3 +1,6 @@
+export const PARAM_FILTER = 'filter';
+export const PARAM_SELECTED = 'selected';
+
 const UrlAPI = {
   setParam(key, value) {
     const url = new URL(window.location);

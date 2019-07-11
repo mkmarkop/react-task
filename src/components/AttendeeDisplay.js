@@ -1,7 +1,7 @@
 import React from 'react';
 import AttendeeTable from './AttendeeTable';
 import SearchBar from './SearchBar';
-import UrlAPI from '../api/UrlAPI';
+import {PARAM_FILTER, default as UrlAPI} from '../api/UrlAPI';
 import './AttendeeDisplay.css';
 
 class AttendeeDisplay extends React.Component {
@@ -15,7 +15,7 @@ class AttendeeDisplay extends React.Component {
   }
 
   componentDidMount() {
-    let filter = UrlAPI.getParam('filter');
+    let filter = UrlAPI.getParam(PARAM_FILTER);
     if (filter) {
       filter = filter.trim();
       this.setState({
@@ -34,9 +34,9 @@ class AttendeeDisplay extends React.Component {
     });
 
     if (filter) {
-      UrlAPI.setParam('filter', filter);
+      UrlAPI.setParam(PARAM_FILTER, filter);
     } else {
-      UrlAPI.clearParam('filter');
+      UrlAPI.clearParam(PARAM_FILTER);
     }
     
     this.props.onSearchInput(searchText);

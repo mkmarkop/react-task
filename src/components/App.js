@@ -3,7 +3,7 @@ import './App.css';
 import AttendeeAPI from '../api/AttendeeAPI';
 import AttendeeDisplay from './AttendeeDisplay';
 import AttendeeDetails from './AttendeeDetails';
-import UrlAPI from '../api/UrlAPI';
+import {PARAM_SELECTED, default as UrlAPI} from '../api/UrlAPI';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class App extends React.Component {
 
   handleCloseDetails() {
     this.setState({selectedAttendee: undefined});
-    UrlAPI.clearParam('selected');
+    UrlAPI.clearParam(PARAM_SELECTED);
   }
 
   handleSelect(id) {
@@ -27,7 +27,7 @@ class App extends React.Component {
         this.setState({selectedAttendee: attendee})
       });
 
-    UrlAPI.setParam('selected', id);
+    UrlAPI.setParam(PARAM_SELECTED, id);
   }
 
   componentDidMount() {
@@ -36,7 +36,7 @@ class App extends React.Component {
         this.setState({attendees: attendees})
       });
 
-    const id = +UrlAPI.getParam('selected');
+    const id = +UrlAPI.getParam(PARAM_SELECTED);
     if (id) {
       this.handleSelect(id);
     }
