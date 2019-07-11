@@ -8,9 +8,9 @@ class AttendeeDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.defaultSearchValue = '';
     this.state = {
-      searchText: '',
-      value: ''
+      searchText: ''
     };
   }
 
@@ -19,10 +19,11 @@ class AttendeeDisplay extends React.Component {
     if (filter) {
       filter = filter.trim();
       this.setState({
-        searchText: filter,
-        value: filter
+        searchText: filter
       });
     }
+
+    this.defaultSearchValue = filter;
   }
 
   handleSearchChange(searchText) {
@@ -48,14 +49,13 @@ class AttendeeDisplay extends React.Component {
 
   render() {
     const attendees = this.props.attendees;
-    const value = this.state.value;
 
     return (
       <div className="attendee-display">
         <SearchBar
           className="search-bar"
           onSearchInput={this.handleSearchChange}
-          value={value}/>
+          value={this.defaultSearchValue}/>
         <AttendeeTable
           selected={this.props.selected}
           attendees={this.filterAttendees(attendees)}
