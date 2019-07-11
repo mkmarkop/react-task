@@ -52,8 +52,14 @@ class AttendeeDisplay extends React.Component {
 
     return (
       <div className="attendee-display">
-        <SearchBar className="search-bar" onSearchInput={this.handleSearchChange} value={value}/>
-        <AttendeeTable attendees={this.filterAttendees(attendees)} onSelect={this.props.onSelect}/>
+        <SearchBar
+          className="search-bar"
+          onSearchInput={this.handleSearchChange}
+          value={value}/>
+        <AttendeeTable
+          selected={this.props.selected}
+          attendees={this.filterAttendees(attendees)}
+          onSelect={this.props.onSelect}/>
       </div>
     );
   }

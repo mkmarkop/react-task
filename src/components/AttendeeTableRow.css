@@ -11,3 +11,7 @@
 .attendee-table-row td:first-child {
   text-align: center;
 }
+
+.selected {
+  background-color: antiquewhite;
+}

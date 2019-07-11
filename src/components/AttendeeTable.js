@@ -14,6 +14,7 @@ class AttendeeTable extends React.Component {
           number={index + 1}
           key={attendee.id} 
           attendee={attendee}
+          selected={this.props.selected === attendee.id}
           onClick={this.props.onSelect} />
       ));
     } else {
